@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - robots.txt
+    - images/**
 
 lang: en
 
@@ -11,24 +12,19 @@ website:
   description: "Open research, data stories, experiments and useful tools created by Matteo Arellano."
   site-url: "https://lab.matteoarellano.com"
 
-  image: "images/home/matteo-arellano-navigating.jpeg"
-  image-alt: "Matteo Arellano standing on a boat with mountains and the sea behind him."
+  image: "images/social/matteos-lab-social-card.png"
 
   open-graph:
-    site-name: "Matteo's Lab"
     locale: en_US
+    site-name: "Matteo's Lab"
 
   twitter-card:
     card-style: summary_large_image
-    creator: "@matteoarellano"
-
-  llms-txt: true
-  bread-crumbs: true
-  back-to-top-navigation: true
 
   navbar:
     title: "Matteo's Lab"
     logo-href: "https://lab.matteoarellano.com"
+    pinned: true
 
     left:
       - href: index.qmd
@@ -44,17 +40,6 @@ website:
 
     right:
       - text: "MatteoArellano.com"
-        href: "https://matteoarellano.com"
-
-  page-footer:
-    left: |
-      Matteo's Lab is part of [MatteoArellano.com](https://matteoarellano.com).
-
-    right:
-      - text: GitHub
-        href: "https://github.com/matteoaurelio"
-
-      - text: Main website
         href: "https://matteoarellano.com"
 
 format:

@@ -1,18 +1,27 @@
 ---
-title: "Open Research, Data Stories and Useful Tools"
-description: "Matteo's Lab documents open research, data visualizations, software experiments and tools designed to create useful outcomes for people, communities and businesses."
+title: "Build with Data. Be a Positive Force."
+description: "Matteo's Lab documents open research, data stories and useful tools designed to help people, communities and businesses make better decisions."
 author: "Matteo Arellano"
 lang: en
-keywords:
-  - data research
-  - data visualization
-  - open research
-  - public-interest technology
-  - analytics
-  - software experiments
-  - Matteo Arellano
-image: "images/home/matteo-arellano-navigating.jpeg"
-image-alt: "Matteo Arellano standing on a boat with mountains and the sea behind him."
+
+image: "https://lab.matteoarellano.com/images/social/matteos-lab-social-card.png"
+image-alt: "A mountain river with the words Build with data. Be a positive force."
+
+open-graph:
+  title: "Matteo's Lab | Build with Data. Be a Positive Force."
+  description: "Open research, data stories and useful tools for people, communities and businesses."
+  image: "https://lab.matteoarellano.com/images/social/matteos-lab-social-card.png"
+  image-width: 1200
+  image-height: 630
+
+twitter-card:
+  title: "Matteo's Lab | Build with Data. Be a Positive Force."
+  description: "Open research, data stories and useful tools for people, communities and businesses."
+  image: "https://lab.matteoarellano.com/images/social/matteos-lab-social-card.png"
+  image-width: 1200
+  image-height: 630
+  card-style: summary_large_image
+
 page-layout: full
 toc: false
 title-block-style: none
