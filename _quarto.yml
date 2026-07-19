@@ -11,6 +11,7 @@ website:
   title: "Matteo's Lab"
   description: "Open research, data stories, experiments and useful tools created by Matteo Arellano."
   site-url: "https://lab.matteoarellano.com"
+  favicon: "images/favicon/matteos-lab-favicon.png"
 
   image: "images/social/matteos-lab-social-card.png"
 
