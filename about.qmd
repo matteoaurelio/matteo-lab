@@ -477,9 +477,11 @@ format:
         </h1>
 
         <p class="about-story-lead">
-          This is not meant to be a polished biography. It is the story behind
-          this Lab, the people and places that shaped me, and why I want the work
-          I create to be useful to more than myself.
+          This lab is a space where I can share my own journey towards fulfilling
+          one of the deepest things I care about: the restoration of our ecosystems
+          and the preservation of our local communities. Let me share a little bit
+          about myself, on what I do and what my values are. I hope that by reading this,
+          you also feel inspired to contribute to your own goals and dreams.
         </p>
 
       </div>
