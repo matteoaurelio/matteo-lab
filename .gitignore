@@ -1,0 +1,4 @@
+_site/
+.quarto/
+.ipynb_checkpoints/
+.DS_Store
