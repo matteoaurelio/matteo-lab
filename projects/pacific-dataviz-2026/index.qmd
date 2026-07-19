@@ -1,14 +1,21 @@
 ---
-title: "Pacific Dataviz Challenge 2026"
-subtitle: "An open research journey through Pacific data, climate, communities and public policy."
+title: "Open Research, Data Stories and Useful Tools"
+description: "Matteo's Lab documents open research, data visualizations, software experiments and tools designed to create useful outcomes for people, communities and businesses."
 author: "Matteo Arellano"
-date: "2026-07-19"
-categories:
-  - Data
-  - Research
-  - Visualization
-  - Pacific
-toc: true
+lang: en
+keywords:
+  - data research
+  - data visualization
+  - open research
+  - public-interest technology
+  - analytics
+  - software experiments
+  - Matteo Arellano
+image: "images/home/matteo-arellano-navigating.jpeg"
+image-alt: "Matteo Arellano standing on a boat with mountains and the sea behind him."
+page-layout: full
+toc: false
+title-block-style: none
 ---
 
 ::: {.callout-note}

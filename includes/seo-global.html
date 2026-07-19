@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://matteoarellano.com/#person",
+        "name": "Matteo Arellano",
+        "url": "https://matteoarellano.com/",
+        "image": "https://lab.matteoarellano.com/images/home/matteo-arellano-navigating.jpeg",
+        "sameAs": [
+          "https://github.com/matteoaurelio",
+          "https://medium.com/@matteo.arellano"
+        ],
+        "knowsAbout": [
+          "Data analysis",
+          "Data visualization",
+          "Digital analytics",
+          "Technical SEO",
+          "Software development",
+          "Public-interest technology"
+        ],
+        "subjectOf": {
+          "@id": "https://lab.matteoarellano.com/#website"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://matteoarellano.com/#website",
+        "url": "https://matteoarellano.com/",
+        "name": "Matteo Arellano",
+        "publisher": {
+          "@id": "https://matteoarellano.com/#person"
+        },
+        "hasPart": {
+          "@id": "https://lab.matteoarellano.com/#website"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lab.matteoarellano.com/#website",
+        "url": "https://lab.matteoarellano.com/",
+        "name": "Matteo's Lab",
+        "alternateName": "Matteo Arellano Lab",
+        "description": "Open research, data stories, experiments and useful tools created by Matteo Arellano.",
+        "inLanguage": "en",
+        "creator": {
+          "@id": "https://matteoarellano.com/#person"
+        },
+        "publisher": {
+          "@id": "https://matteoarellano.com/#person"
+        },
+        "isPartOf": {
+          "@id": "https://matteoarellano.com/#website"
+        }
+      }
+    ]
+  }
+</script>

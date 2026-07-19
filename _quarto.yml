@@ -1,23 +1,69 @@
 project:
   type: website
+  output-dir: _site
+  resources:
+    - robots.txt
+
+lang: en
 
 website:
   title: "Matteo's Lab"
+  description: "Open research, data stories, experiments and useful tools created by Matteo Arellano."
+  site-url: "https://lab.matteoarellano.com"
+
+  image: "images/home/matteo-arellano-navigating.jpeg"
+  image-alt: "Matteo Arellano standing on a boat with mountains and the sea behind him."
+
+  open-graph:
+    site-name: "Matteo's Lab"
+    locale: en_US
+
+  twitter-card:
+    card-style: summary_large_image
+    creator: "@matteoarellano"
+
+  llms-txt: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+
   navbar:
+    title: "Matteo's Lab"
+    logo-href: "https://lab.matteoarellano.com"
+
     left:
       - href: index.qmd
         text: Home
+
       - text: Projects
         menu:
           - href: projects/pacific-dataviz-2026/index.qmd
             text: Pacific Dataviz Challenge 2026
+
       - href: about.qmd
         text: About
+
+    right:
+      - text: "MatteoArellano.com"
+        href: "https://matteoarellano.com"
+
+  page-footer:
+    left: |
+      Matteo's Lab is part of [MatteoArellano.com](https://matteoarellano.com).
+
+    right:
+      - text: GitHub
+        href: "https://github.com/matteoaurelio"
+
+      - text: Main website
+        href: "https://matteoarellano.com"
 
 format:
   html:
     theme:
       - cosmo
       - brand
+
     css: styles.css
     toc: true
+    canonical-url: true
+    include-in-header: includes/seo-global.html
