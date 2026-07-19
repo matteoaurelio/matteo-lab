@@ -1006,7 +1006,7 @@ title-block-style: none
 
         <h1>
           Build with data.<br>
-          Be a <span>positive force.</span>
+          Be a <span>force</span> for <span>positive change.</span>
         </h1>
 
         <p class="lab-hero__intro">
