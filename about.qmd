@@ -507,7 +507,7 @@ format:
     <div class="about-story-shell about-story-narrow">
 
       <h2>
-        I come from Morelos
+        I was born in Morelos, Mexico
       </h2>
 
       <p class="about-story-opening">
