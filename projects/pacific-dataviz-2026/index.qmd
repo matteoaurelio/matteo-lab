@@ -1,0 +1,67 @@
+---
+title: "Pacific Dataviz Challenge 2026"
+subtitle: "An open research journey through Pacific data, climate, communities and public policy."
+author: "Matteo Arellano"
+date: "2026-07-19"
+categories:
+  - Data
+  - Research
+  - Visualization
+  - Pacific
+toc: true
+---
+
+::: {.callout-note}
+## Project status
+
+**Researching**
+
+I am currently exploring the available datasets, documenting early hypotheses and testing possible directions for the final project.
+:::
+
+## About the project
+
+This is my first data competition.
+
+Over the coming weeks, I will document how I explore the datasets, develop research questions, test hypotheses, create visual experiments and decide what story is worth telling.
+
+The purpose is not only to create a final visualization. I want to understand how data can help communities, support better public decisions and bring attention to issues affecting Pacific and Indigenous populations.
+
+## Current phase
+
+I am beginning with dataset exploration.
+
+My first goals are to understand:
+
+- What information is available
+- What each row and variable represents
+- Which geographic areas and years are covered
+- What information is missing
+- Which datasets could be connected
+- What meaningful questions the data could answer
+
+## What will be documented
+
+This project will include:
+
+- Research logs
+- Hypotheses
+- Data-cleaning decisions
+- Code and notebooks
+- Exploratory visualizations
+- Findings and limitations
+- Videos
+- The final competition submission
+- A retrospective after completion
+
+## Current research question
+
+> What important story about Pacific communities can these datasets genuinely support?
+
+This question will evolve as I learn more about the available evidence.
+
+## Explore the project
+
+- [Research Log](log/index.qmd) — Dated notes, experiments and changes in direction
+- [Hypotheses](hypotheses.qmd) — Questions and ideas being tested
+- [Decision Log](decisions.qmd) — Important analytical and technical choices

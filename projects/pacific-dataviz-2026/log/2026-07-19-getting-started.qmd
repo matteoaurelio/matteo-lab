@@ -1,0 +1,55 @@
+---
+title: "Day 1: Understanding the Data Before Choosing the Story"
+description: "The beginning of my research process for the Pacific Dataviz Challenge 2026."
+author: "Matteo Arellano"
+date: "2026-07-19"
+categories:
+  - Research Log
+  - Dataset Exploration
+  - Pacific Dataviz Challenge
+toc: true
+---
+
+## Today's question
+
+> What data is available, and what kinds of questions could it genuinely help me answer?
+
+## What I am working on
+
+Today, I am beginning my first exploration of the datasets available for the Pacific Dataviz Challenge 2026.
+
+Before choosing a story or creating a polished visualization, I want to understand the evidence properly.
+
+My first task is to identify:
+
+- What each dataset measures
+- What each row represents
+- Which countries, territories or communities are included
+- Which years are covered
+- Which variables could be useful
+- How much information is missing
+- Which datasets could potentially be connected
+
+## Why I am starting here
+
+It would be easy to begin with an attractive map or chart. However, a visualization can look convincing while representing the data incorrectly.
+
+I first want to understand what the datasets can support and what they cannot support.
+
+## Early observations
+
+I will add my first observations here after inspecting the datasets.
+
+::: {.callout-warning}
+## Exploratory work
+
+The ideas, calculations and visualizations documented during this phase are provisional. They may change as I improve the data cleaning and methodology.
+:::
+
+## Questions that emerged
+
+I will record new questions here as I explore the data.
+
+## Next step
+
+Create a dataset inventory covering the source, unit of analysis, geographic coverage, time period, important variables and possible uses of each dataset.

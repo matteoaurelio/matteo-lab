@@ -7,7 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - text: Projects
+        menu:
+          - href: projects/pacific-dataviz-2026/index.qmd
+            text: Pacific Dataviz Challenge 2026
+      - href: about.qmd
+        text: About
 
 format:
   html:
@@ -16,6 +21,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-

@@ -1,0 +1,17 @@
+---
+title: "Research Log"
+description: "Dated notes documenting the research, hypotheses, experiments and decisions behind the Pacific Dataviz Challenge 2026."
+listing:
+  contents: "20*.qmd"
+  sort: "date desc"
+  type: default
+  fields:
+    - date
+    - title
+    - description
+    - categories
+  page-size: 20
+page-layout: full
+---
+
+This log documents the project as it develops. Entries may include early questions, incomplete experiments, code, visualizations, failed hypotheses and changes in direction.
