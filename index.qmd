@@ -1,6 +1,27 @@
 ---
-title: "Matteo's Lab"
-description: "Open research, data stories and useful tools built to create a positive impact."
+title: "Build with Data. Be a Positive Force."
+description: "Matteo's Lab documents open research, data stories and useful tools designed to help people, communities and businesses make better decisions."
+author: "Matteo Arellano"
+lang: en
+
+image: "images/social/matteos-lab-social-card.png"
+image-alt: "Mountain and river landscape introducing Matteo's Lab: Build with data, a force for positive change."
+
+open-graph:
+  title: "Matteo's Lab | Build with Data"
+  description: "Open research, data stories and useful tools for people, communities and businesses."
+  image: "images/social/matteos-lab-social-card.png"
+  image-width: 1200
+  image-height: 630
+  site-name: "Matteo's Lab"
+  locale: en_US
+
+twitter-card:
+  card-style: summary_large_image
+  title: "Matteo's Lab | Build with Data"
+  description: "Open research, data stories and useful tools for people, communities and businesses."
+  image: "images/social/matteos-lab-social-card.png"
+
 page-layout: full
 toc: false
 title-block-style: none
