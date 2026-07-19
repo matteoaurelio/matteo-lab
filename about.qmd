@@ -1,5 +1,815 @@
 ---
-title: "About"
+title: "About Matteo Arellano"
+description: "The personal story behind Matteo's Lab, from Morelos to Rotterdam and the communities that shaped how Matteo approaches research, technology and service."
+author: "Matteo Arellano"
+lang: en
+image: "images/home/matteo-in-guatemala.jpeg"
+image-alt: "Matteo Arellano travelling by boat with a community group on a river in Guatemala."
+page-layout: full
+toc: false
+title-block-style: none
+
+open-graph:
+  title: "About Matteo Arellano | Matteo's Lab"
+  description: "The story behind Matteo's Lab and the experiences that shaped its purpose."
+  image: "https://lab.matteoarellano.com/images/social/matteos-lab-social-card.png"
+
+twitter-card:
+  card-style: summary_large_image
+  title: "About Matteo Arellano | Matteo's Lab"
+  description: "The story behind Matteo's Lab and the experiences that shaped its purpose."
+  image: "https://lab.matteoarellano.com/images/social/matteos-lab-social-card.png"
+
+format:
+  html:
+    include-in-header:
+      - includes/about-schema.html
 ---
 
-About this site
+<style>
+  #title-block-header {
+    display: none !important;
+  }
+
+  #quarto-content,
+  main.content {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page-columns {
+    display: block !important;
+  }
+
+  :root {
+    --story-forest: #214f3b;
+    --story-leaf: #3f7d55;
+    --story-green: #66a36f;
+    --story-mint: #dcefe1;
+    --story-light: #f2f8f1;
+    --story-sand: #f3ead7;
+    --story-clay: #b76544;
+    --story-river: #45a4a0;
+    --story-ink: #24382e;
+    --story-muted: #5c6f64;
+    --story-white: #ffffff;
+    --story-border: rgba(33, 79, 59, 0.16);
+  }
+
+  .about-story-page {
+    overflow: hidden;
+    color: var(--story-ink);
+    background: #fffefa;
+  }
+
+  .about-story-shell {
+    width: min(1080px, calc(100% - 2rem));
+    margin: 0 auto;
+  }
+
+  /* HERO */
+
+  .about-story-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 0;
+    background:
+      radial-gradient(
+        circle at 88% 12%,
+        rgba(69, 164, 160, 0.16),
+        transparent 30%
+      ),
+      linear-gradient(
+        135deg,
+        #edf7ec 0%,
+        #dcefe1 55%,
+        #f3ead7 100%
+      );
+  }
+
+  .about-story-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        135deg,
+        transparent 42%,
+        var(--story-forest) 43% 47%,
+        transparent 48%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 42%,
+        var(--story-leaf) 43% 47%,
+        transparent 48%
+      );
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to left, black, transparent 75%);
+  }
+
+  .about-story-hero__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.72fr);
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-story-kicker {
+    margin: 0 0 1rem;
+    color: var(--story-leaf);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  .about-story-hero h1 {
+    max-width: 720px;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    color: var(--story-forest);
+    font-size: clamp(3rem, 5.6vw, 5.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+  }
+
+  .about-story-lead {
+    max-width: 710px;
+    margin: 2rem 0 0;
+    color: #405b4c;
+    font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+    line-height: 1.8;
+  }
+
+  .about-story-photo {
+    margin: 0;
+    overflow: hidden;
+    border: 10px solid rgba(255, 255, 255, 0.72);
+    border-radius: 28px;
+    background: var(--story-white);
+    box-shadow: 0 24px 60px rgba(33, 79, 59, 0.16);
+    transform: rotate(1.5deg);
+  }
+
+  .about-story-photo img {
+    width: 100%;
+    height: 520px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about-story-photo figcaption {
+    padding: 1rem 1.15rem 1.1rem;
+    color: var(--story-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  /* STORY SECTIONS */
+
+  .about-story-section {
+    padding: 5.5rem 0;
+  }
+
+  .about-story-section--green {
+    background: var(--story-light);
+  }
+
+  .about-story-section--sand {
+    background: #faf5e9;
+  }
+
+  .about-story-section--white {
+    background: var(--story-white);
+  }
+
+  .about-story-narrow {
+    max-width: 790px;
+  }
+
+  .about-story-section h2 {
+    margin: 0 0 1.8rem;
+    padding: 0;
+    border: 0 !important;
+    color: var(--story-forest);
+    font-size: clamp(2rem, 3.7vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .about-story-section p {
+    margin: 0 0 1.55rem;
+    color: var(--story-ink);
+    font-size: 1.1rem;
+    line-height: 1.95;
+  }
+
+  .about-story-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-story-opening {
+    color: var(--story-forest) !important;
+    font-size: 1.3rem !important;
+    line-height: 1.85 !important;
+  }
+
+  /* FAMILY */
+
+  .about-family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.3rem;
+    margin-top: 3rem;
+  }
+
+  .about-family-card {
+    position: relative;
+    padding: 2.2rem;
+    overflow: hidden;
+    border: 1px solid var(--story-border);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .about-family-card::after {
+    content: "";
+    position: absolute;
+    right: -3.5rem;
+    bottom: -3.5rem;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid rgba(63, 125, 85, 0.11);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 25px rgba(63, 125, 85, 0.025),
+      0 0 0 50px rgba(63, 125, 85, 0.015);
+  }
+
+  .about-family-card__label {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--story-clay);
+    font-size: 0.77rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .about-family-card h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 1rem;
+    color: var(--story-forest);
+    font-size: 1.45rem;
+  }
+
+  .about-family-card p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: var(--story-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* QUOTE */
+
+  .about-story-quote {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2.2rem;
+    border: 0;
+    border-left: 5px solid var(--story-river);
+    border-radius: 0 22px 22px 0;
+    color: var(--story-forest);
+    background: rgba(69, 164, 160, 0.1);
+    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+    font-weight: 650;
+    line-height: 1.65;
+  }
+
+  .about-story-quote-light {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2.2rem;
+    border: 0;
+    border-left: 5px solid var(--story-river);
+    border-radius: 0 22px 22px 0;
+    color: var(--story-mint);
+    background: rgba(69, 164, 160, 0.1);
+    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+    font-weight: 650;
+    line-height: 1.65;
+  }
+
+  /* JOURNEY */
+
+  .about-places {
+    display: grid;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .about-place {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--story-border);
+  }
+
+  .about-place:last-child {
+    border-bottom: 1px solid var(--story-border);
+  }
+
+  .about-place__name {
+    color: var(--story-leaf);
+    font-size: 0.8rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+  }
+
+  .about-place h3 {
+    margin: 0 0 0.8rem;
+    color: var(--story-forest);
+    font-size: 1.4rem;
+  }
+
+  .about-place p {
+    margin: 0;
+    color: var(--story-muted);
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+
+  /* FINAL SECTION */
+
+  .about-story-final {
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+    color: var(--story-white);
+    background:
+      radial-gradient(
+        circle at 90% 20%,
+        rgba(102, 163, 111, 0.38),
+        transparent 32%
+      ),
+      linear-gradient(
+        135deg,
+        #214f3b,
+        #316a4b 58%,
+        #397d69
+      );
+  }
+
+  .about-story-final::after {
+    content: "";
+    position: absolute;
+    right: -8rem;
+    bottom: -10rem;
+    width: 28rem;
+    height: 28rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 55px rgba(255, 255, 255, 0.025),
+      0 0 0 110px rgba(255, 255, 255, 0.014);
+  }
+
+  .about-story-final__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+  }
+
+  .about-story-final h2 {
+    margin: 0 0 1.8rem;
+    padding: 0;
+    border: 0 !important;
+    color: var(--story-white);
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .about-story-final p {
+    margin: 0 0 1.5rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.12rem;
+    line-height: 1.9;
+  }
+
+  .about-story-final strong {
+    color: #dcf6df;
+  }
+
+  @media (max-width: 900px) {
+    .about-story-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .about-story-photo {
+      max-width: 580px;
+      transform: none;
+    }
+
+    .about-family-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .about-story-shell {
+      width: min(100% - 1.25rem, 1080px);
+    }
+
+    .about-story-hero {
+      padding: 4rem 0;
+    }
+
+    .about-story-hero h1 {
+      font-size: clamp(3rem, 14vw, 4.4rem);
+    }
+
+    .about-story-photo img {
+      height: 430px;
+    }
+
+    .about-story-section {
+      padding: 4rem 0;
+    }
+
+    .about-place {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .about-story-final {
+      padding: 4.5rem 0;
+    }
+  }
+</style>
+
+```{=html}
+<div class="about-story-page">
+
+  <section class="about-story-hero">
+    <div class="about-story-shell about-story-hero__inner">
+
+      <div>
+
+        <p class="about-story-kicker">
+          A LITTLE ABOUT ME
+        </p>
+
+        <h1>
+          I was born curious.
+        </h1>
+
+        <p class="about-story-lead">
+          This is not meant to be a polished biography. It is the story behind
+          this Lab, the people and places that shaped me, and why I want the work
+          I create to be useful to more than myself.
+        </p>
+
+      </div>
+
+      <figure class="about-story-photo">
+
+        <img
+          src="/images/home/matteo-in-guatemala.jpeg"
+          alt="Matteo Arellano travelling by boat with a community group on a river in Guatemala"
+        />
+
+        <figcaption>
+          Getting to know the river systems in Guatemala. Experiences like this taught me
+          that listening is often the first form of useful work.
+        </figcaption>
+
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="about-story-section about-story-section--white">
+    <div class="about-story-shell about-story-narrow">
+
+      <h2>
+        I come from Morelos
+      </h2>
+
+      <p class="about-story-opening">
+        I was born in Mexico, in the state of Morelos, near the center of the
+        country. Since I was small, I have always tried to make sense of the
+        world around me.
+      </p>
+
+      <p>
+        Curiosity never really left me. I asked questions, watched how people
+        behaved and tried to understand why some systems helped people while
+        others seemed to leave them behind.
+      </p>
+
+      <p>
+        Morelos is a place where history does not feel distant. It remains
+        present in the land, language, agriculture, food, music, family life and
+        community celebrations. Nahua and Tlahuica histories are part of the
+        region, while Náhuatl and traditions such as the Chinelos continue to
+        connect people with memory and place.
+      </p>
+
+      <p>
+        Growing up there taught me that the world cannot be understood only
+        through statistics or institutions. Some knowledge lives in stories,
+        language, observation, work and the experience passed from one
+        generation to the next.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="about-story-section about-story-section--green">
+    <div class="about-story-shell">
+
+      <div class="about-story-narrow">
+
+        <h2>
+          The people who shaped how I see the world
+        </h2>
+
+        <p>
+          I grew up close to two different cultural inheritances. They did not
+          cancel one another out. Together, they taught me that identity can
+          contain different histories and different ways of seeing.
+        </p>
+
+      </div>
+
+      <div class="about-family-grid">
+
+        <article class="about-family-card">
+
+          <span class="about-family-card__label">
+            MY GRANDFATHER
+          </span>
+
+          <h3>
+            Community, memory and Indigenous roots
+          </h3>
+
+          <p>
+            Through my grandfather and my family’s Indigenous roots, I learned
+            to value the relationship between people, land, responsibility and
+            community. I learned that knowledge does not belong only to
+            universities or books. It is also held in practice, memory and the
+            experiences shared between generations.
+          </p>
+
+        </article>
+
+        <article class="about-family-card">
+
+          <span class="about-family-card__label">
+            MY GRANDMOTHER
+          </span>
+
+          <h3>
+            History, Greek culture and a wider world
+          </h3>
+
+          <p>
+            My grandmother introduced me to another cultural inheritance.
+            Through her, I became curious about Greek culture and European
+            history, including their questions about ethics, society, knowledge
+            and the responsibilities people have toward one another.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-story-section about-story-section--white">
+    <div class="about-story-shell about-story-narrow">
+
+      <h2>
+        What travelling taught me
+      </h2>
+
+      <p>
+        After graduating in Rotterdam, my world became much larger. I studied,
+        worked and built friendships with people from many countries. Being
+        surrounded by so many backgrounds changed how I saw both opportunity
+        and responsibility.
+      </p>
+
+      <p>
+        I began to understand that service, dignity and opportunity are not
+        abstract concepts. They look different in every place, and they must be
+        understood through the realities of the people living there.
+      </p>
+
+      <blockquote class="about-story-quote">
+        The more of the world I saw, the more I understood that useful work
+        begins by listening.
+      </blockquote>
+
+      <p>
+        I was also able to participate in projects connected to NGOs,
+        entrepreneurship, conservation and local communities. These experiences
+        stayed with me because they placed me outside the comfort of theory.
+      </p>
+
+      <div class="about-places">
+
+        <article class="about-place">
+
+          <div class="about-place__name">
+            ROTTERDAM
+          </div>
+
+          <div>
+
+            <h3>
+              A global perspective
+            </h3>
+
+            <p>
+              Studying and beginning my career in Rotterdam placed me among
+              people from across the world. Through Rotterdam100, I also
+              experienced entrepreneurship as a way to approach social and
+              economic challenges, rather than simply as a way to create a
+              company.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="about-place">
+
+          <div class="about-place__name">
+            GUATEMALA
+          </div>
+
+          <div>
+
+            <h3>
+              Teaching, listening and exchanging knowledge
+            </h3>
+
+            <p>
+              Working alongside communities in Guatemala reminded me that
+              meaningful exchange is never one-directional. I arrived prepared
+              to contribute, but I also left having learned from people whose
+              understanding of their own land and communities was deeper than
+              anything I could have brought from outside.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="about-place">
+
+          <div class="about-place__name">
+            COSTA RICA
+          </div>
+
+          <div>
+
+            <h3>
+              Conservation made tangible
+            </h3>
+
+            <p>
+              Serving at a sea-turtle shelter brought environmental work close
+              to everyday reality. Protection was not an abstract discussion.
+              It was physical, patient and shared work.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="about-place">
+
+          <div class="about-place__name">
+            PERU
+          </div>
+
+          <div>
+
+            <h3>
+              Understanding what can be lost
+            </h3>
+
+            <p>
+              Being close to work connected to forest protection made the
+              consequences of environmental loss more real to me. It also
+              reinforced how important it is to listen to the communities that
+              have protected and depended on those environments for
+              generations.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-story-section about-story-section--sand">
+    <div class="about-story-shell about-story-narrow">
+
+      <h2>
+        Science and community belong together
+      </h2>
+
+      <p>
+        I respect scientific thinking deeply. Evidence, transparency,
+        reproducibility and the willingness to change direction are essential
+        to responsible work.
+      </p>
+
+      <p>
+        But I also believe science becomes stronger when it remains connected
+        to the people and places represented by the data. Communities carry
+        knowledge that cannot always be reduced to a spreadsheet.
+      </p>
+
+      <p>
+        We are living through a period of polarization, environmental pressure,
+        economic uncertainty and distrust. Data and technology should not be
+        used only to optimize numbers. They should help us understand reality
+        more honestly and respond to it more humanely.
+      </p>
+
+      <p>
+        The same belief influences how I think about business. Healthy
+        businesses can create employment, expand opportunity, share knowledge
+        and build environments where people can grow. Economic success and
+        positive impact should not automatically be treated as opposites.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="about-story-final">
+    <div class="about-story-shell about-story-final__inner">
+
+      <h2>
+        Why I built Matteo’s Lab
+      </h2>
+
+      <p>
+        This Lab is where these different parts of my life come together:
+        research, data, technology, business, communities and the responsibility
+        to create something useful.
+      </p>
+
+      <p>
+        It is a place for notes, questions, experiments, visualizations, tools,
+        mistakes and discoveries. I do not want it to become a collection of
+        polished claims. I want it to remain a living record of how I learn,
+        change direction and build.
+      </p>
+
+      <p>
+        The question behind the Lab is simple:
+      </p>
+
+      <blockquote class="about-story-quote-light">
+        How can I use my talents in research, data, technology and communication
+        to serve people and contribute to work that matters?
+      </blockquote>
+
+      <p>
+        I do not have every answer. But I can listen, learn and decide what kind
+        of work I contribute.
+      </p>
+
+      <p>
+        My guiding principle remains:
+        <strong>Be a Positive Force for Change.</strong>
+      </p>
+
+    </div>
+  </section>
+
+</div>
+```
