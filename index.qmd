@@ -1,7 +1,1403 @@
 ---
 title: "Matteo's Lab"
+description: "Open research, data stories and useful tools built to create a positive impact."
+page-layout: full
+toc: false
+title-block-style: none
 ---
 
-This is a Quarto website.
+<style>
+  #title-block-header {
+    display: none !important;
+  }
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+  :root {
+    --lab-abyss: #021c26;
+    --lab-deep: #032b38;
+    --lab-ocean: #06495a;
+    --lab-lagoon: #14a8bb;
+    --lab-cyan: #5bd3e3;
+    --lab-reef: #81e2dc;
+    --lab-seafoam: #d8f6f1;
+    --lab-coral: #f39a7b;
+    --lab-sand: #f4ead2;
+    --lab-cream: #fbf8ef;
+    --lab-white: #ffffff;
+    --lab-ink: #0a2b36;
+    --lab-muted: #627780;
+    --lab-border: rgba(6, 73, 90, 0.15);
+  }
+
+  #quarto-content,
+  main.content {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page-columns {
+    display: block !important;
+  }
+
+  .lab-home {
+    overflow: hidden;
+    color: var(--lab-ink);
+    background: var(--lab-cream);
+  }
+
+  .lab-container {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+  }
+
+  .lab-kicker,
+  .lab-section__eyebrow {
+    margin: 0 0 1.4rem;
+    color: var(--lab-cyan);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  /* ======================================================
+     HERO
+     ====================================================== */
+
+  .lab-hero {
+    position: relative;
+    overflow: hidden;
+    color: var(--lab-white);
+    background:
+      radial-gradient(
+        circle at 84% 14%,
+        rgba(91, 211, 227, 0.28),
+        transparent 27%
+      ),
+      radial-gradient(
+        circle at 76% 75%,
+        rgba(129, 226, 220, 0.12),
+        transparent 30%
+      ),
+      linear-gradient(
+        130deg,
+        var(--lab-abyss) 0%,
+        var(--lab-deep) 48%,
+        var(--lab-ocean) 100%
+      );
+  }
+
+  .lab-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.08) 1px,
+        transparent 1px
+      );
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+  }
+
+  .lab-hero::after {
+    content: "";
+    position: absolute;
+    right: -9rem;
+    bottom: -11rem;
+    width: 38rem;
+    height: 38rem;
+    border: 1px solid rgba(129, 226, 220, 0.16);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 70px rgba(129, 226, 220, 0.035),
+      0 0 0 140px rgba(129, 226, 220, 0.022),
+      0 0 0 210px rgba(129, 226, 220, 0.014);
+  }
+
+  .lab-hero__pattern {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    opacity: 0.11;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        135deg,
+        transparent 42%,
+        rgba(255, 255, 255, 0.85) 43%,
+        rgba(255, 255, 255, 0.85) 47%,
+        transparent 48%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 42%,
+        rgba(255, 255, 255, 0.58) 43%,
+        rgba(255, 255, 255, 0.58) 47%,
+        transparent 48%
+      );
+    background-size: 42px 42px;
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.9),
+      transparent
+    );
+  }
+
+  .lab-hero__waves {
+    position: absolute;
+    z-index: 1;
+    right: -4%;
+    bottom: -6rem;
+    width: 62%;
+    height: 21rem;
+    opacity: 0.16;
+    border-radius: 50%;
+    pointer-events: none;
+    background:
+      repeating-radial-gradient(
+        ellipse at 50% 100%,
+        transparent 0 32px,
+        rgba(129, 226, 220, 0.7) 33px 35px,
+        transparent 36px 60px
+      );
+    transform: rotate(-4deg);
+  }
+
+  .lab-hero__inner {
+    position: relative;
+    z-index: 3;
+    padding: 6.5rem 0 6rem;
+  }
+
+  .lab-hero__copy {
+    max-width: 1050px;
+  }
+
+  .lab-hero h1 {
+    max-width: 1000px;
+    margin: 0;
+    color: var(--lab-white);
+    font-size: clamp(3.6rem, 7vw, 7rem);
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+  }
+
+  .lab-hero h1 span {
+    color: var(--lab-cyan);
+  }
+
+  .lab-hero__intro {
+    max-width: 810px;
+    margin: 2.75rem 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1.12rem, 1.8vw, 1.35rem);
+    line-height: 1.75;
+  }
+
+  .lab-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.75rem;
+  }
+
+  .lab-button {
+    display: inline-flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.55rem;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+      transform 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .lab-button:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .lab-button--primary {
+    color: var(--lab-abyss);
+    background: var(--lab-cyan);
+  }
+
+  .lab-button--primary:hover {
+    color: var(--lab-abyss);
+    background: var(--lab-reef);
+  }
+
+  .lab-button--secondary {
+    color: var(--lab-white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .lab-button--secondary:hover {
+    color: var(--lab-white);
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ======================================================
+     GUIDING PRINCIPLE
+     ====================================================== */
+
+  .lab-mission-card {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    padding: clamp(2rem, 4vw, 3rem);
+    overflow: hidden;
+    border: 1px solid rgba(129, 226, 220, 0.24);
+    border-radius: 30px;
+    background:
+      linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(91, 211, 227, 0.07)
+      );
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+  }
+
+  .lab-mission-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    opacity: 0.12;
+    background-image:
+      linear-gradient(
+        135deg,
+        transparent 40%,
+        var(--lab-reef) 41% 46%,
+        transparent 47%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 40%,
+        var(--lab-cyan) 41% 46%,
+        transparent 47%
+      );
+    background-size: 36px 36px;
+    mask-image: linear-gradient(to left, black, transparent);
+    pointer-events: none;
+  }
+
+  .lab-mission-card::after {
+    content: "";
+    position: absolute;
+    right: 3rem;
+    bottom: -5rem;
+    width: 15rem;
+    height: 15rem;
+    border: 1px solid rgba(129, 226, 220, 0.18);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 36px rgba(129, 226, 220, 0.035),
+      0 0 0 72px rgba(129, 226, 220, 0.02);
+    pointer-events: none;
+  }
+
+  .lab-mission-card__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .lab-mission-card__header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .lab-mission-card__icon {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(129, 226, 220, 0.32);
+    border-radius: 50%;
+    color: var(--lab-cyan);
+    background: rgba(91, 211, 227, 0.1);
+  }
+
+  .lab-mission-card__icon svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .lab-mission-card__label {
+    margin: 0 0 0.55rem;
+    color: var(--lab-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+  }
+
+  .lab-mission-card h2 {
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    color: var(--lab-white);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .lab-mission-card__copy {
+    max-width: 980px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .lab-mission-card__source {
+    display: block;
+    margin-top: 2rem;
+    color: var(--lab-cyan);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  /* ======================================================
+     GENERAL SECTIONS
+     ====================================================== */
+
+  .lab-section {
+    position: relative;
+    padding: 6.5rem 0;
+  }
+
+  .lab-section--white {
+    background: var(--lab-white);
+  }
+
+  .lab-section--cream {
+    background: var(--lab-cream);
+  }
+
+  .lab-section__intro {
+    max-width: 840px;
+    margin-bottom: 3.5rem;
+  }
+
+  .lab-section__eyebrow {
+    color: var(--lab-ocean);
+  }
+
+  .lab-section h2 {
+    margin: 0;
+    color: var(--lab-ink);
+    font-size: clamp(2.6rem, 4.8vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+  }
+
+  .lab-section__intro > p:last-child {
+    max-width: 780px;
+    margin: 1.5rem 0 0;
+    color: var(--lab-muted);
+    font-size: 1.16rem;
+    line-height: 1.8;
+  }
+
+  .lab-section-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34%;
+    height: 100%;
+    opacity: 0.035;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        135deg,
+        transparent 40%,
+        var(--lab-ocean) 41% 47%,
+        transparent 48%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 40%,
+        var(--lab-ocean) 41% 47%,
+        transparent 48%
+      );
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to left, black, transparent);
+  }
+
+  /* ======================================================
+     PURPOSE CARDS
+     ====================================================== */
+
+  .lab-purpose-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .lab-purpose-card {
+    position: relative;
+    min-height: 320px;
+    padding: 2.2rem;
+    overflow: hidden;
+    border: 1px solid var(--lab-border);
+    border-radius: 26px;
+    background: var(--lab-white);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .lab-purpose-card::after {
+    content: "";
+    position: absolute;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid rgba(20, 168, 187, 0.11);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 25px rgba(20, 168, 187, 0.025),
+      0 0 0 50px rgba(20, 168, 187, 0.015);
+  }
+
+  .lab-purpose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 60px rgba(3, 43, 56, 0.1);
+  }
+
+  .lab-purpose-card__number {
+    display: block;
+    margin-bottom: 4rem;
+    color: var(--lab-lagoon);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  .lab-purpose-card h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: var(--lab-ink);
+    font-size: 1.6rem;
+  }
+
+  .lab-purpose-card p {
+    position: relative;
+    z-index: 2;
+    margin: 1rem 0 0;
+    color: var(--lab-muted);
+    line-height: 1.75;
+  }
+
+  /* ======================================================
+     CURRENT PROJECT
+     ====================================================== */
+
+  .lab-expedition {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 34px;
+    background: var(--lab-deep);
+    box-shadow: 0 28px 75px rgba(3, 43, 56, 0.18);
+  }
+
+  .lab-expedition__visual {
+    position: relative;
+    min-height: 460px;
+    overflow: hidden;
+    background: var(--lab-deep);
+  }
+
+  .lab-expedition__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .lab-expedition__visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(
+        to top,
+        rgba(2, 28, 38, 0.64) 0%,
+        rgba(2, 28, 38, 0.04) 52%,
+        rgba(2, 28, 38, 0.12) 100%
+      );
+    pointer-events: none;
+  }
+
+  .lab-expedition__visual::after {
+    content: "PACIFIC";
+    position: absolute;
+    z-index: 2;
+    left: 2rem;
+    bottom: 1rem;
+    color: rgba(255, 255, 255, 0.17);
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.07em;
+    pointer-events: none;
+  }
+
+  .lab-expedition__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.2rem, 5vw, 4.2rem);
+    overflow: hidden;
+    color: var(--lab-white);
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(91, 211, 227, 0.14),
+        transparent 34%
+      ),
+      var(--lab-deep);
+  }
+
+  .lab-expedition__content::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -4rem;
+    width: 14rem;
+    height: 14rem;
+    border: 1px solid rgba(129, 226, 220, 0.14);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 40px rgba(129, 226, 220, 0.025),
+      0 0 0 80px rgba(129, 226, 220, 0.014);
+  }
+
+  .lab-expedition__number,
+  .lab-expedition h3,
+  .lab-expedition__content p,
+  .lab-expedition__link {
+    position: relative;
+    z-index: 2;
+  }
+
+  .lab-expedition__number {
+    margin: 0 0 1rem;
+    color: var(--lab-cyan);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .lab-expedition h3 {
+    margin: 0;
+    color: var(--lab-white);
+    font-size: clamp(2.4rem, 3.8vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .lab-expedition__content p {
+    margin: 1.5rem 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.75;
+  }
+
+  .lab-expedition__link {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 1.9rem;
+    color: var(--lab-cyan);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .lab-expedition__link:hover {
+    color: var(--lab-white);
+    text-decoration: none;
+  }
+
+  /* ======================================================
+     BIGGER PURPOSE
+     ====================================================== */
+
+  .lab-values {
+    position: relative;
+    overflow: hidden;
+    color: var(--lab-white);
+    background:
+      radial-gradient(
+        circle at 12% 20%,
+        rgba(20, 168, 187, 0.16),
+        transparent 25%
+      ),
+      linear-gradient(
+        135deg,
+        var(--lab-abyss),
+        var(--lab-deep)
+      );
+  }
+
+  .lab-values::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image:
+      linear-gradient(
+        135deg,
+        transparent 40%,
+        var(--lab-reef) 41% 46%,
+        transparent 47%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 40%,
+        var(--lab-cyan) 41% 46%,
+        transparent 47%
+      );
+    background-size: 46px 46px;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black,
+      transparent
+    );
+  }
+
+  .lab-values::after {
+    content: "+";
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-52%);
+    color: rgba(91, 211, 227, 0.05);
+    font-size: 28rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .lab-values__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5rem;
+    align-items: start;
+    padding: 7rem 0;
+  }
+
+  .lab-values__quote {
+    margin: 0;
+    color: var(--lab-white);
+    font-size: clamp(3rem, 5.5vw, 6rem);
+    font-weight: 900;
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+  }
+
+  .lab-values__quote span {
+    color: var(--lab-cyan);
+  }
+
+  .lab-values__copy {
+    max-width: 720px;
+  }
+
+  .lab-values__copy p {
+    margin: 0 0 1.4rem;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 1.12rem;
+    line-height: 1.8;
+  }
+
+  .lab-values__copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ======================================================
+     PRINCIPLES
+     ====================================================== */
+
+  .lab-principles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--lab-border);
+    border-radius: 28px;
+    background: var(--lab-border);
+  }
+
+  .lab-principle {
+    position: relative;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.75rem 2rem;
+    overflow: hidden;
+    text-align: center;
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(91, 211, 227, 0.09),
+        transparent 40%
+      ),
+      var(--lab-white);
+  }
+
+  .lab-principle::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -4rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid rgba(20, 168, 187, 0.08);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 25px rgba(20, 168, 187, 0.018),
+      0 0 0 50px rgba(20, 168, 187, 0.01);
+  }
+
+  .lab-principle__icon {
+    position: relative;
+    z-index: 2;
+    width: 78px;
+    height: 78px;
+    flex: 0 0 78px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 2.25rem;
+    border: 1px solid rgba(20, 168, 187, 0.28);
+    border-radius: 50%;
+    color: var(--lab-ocean);
+    background:
+      radial-gradient(
+        circle,
+        rgba(129, 226, 220, 0.22),
+        rgba(91, 211, 227, 0.08)
+      );
+  }
+
+  .lab-principle__icon::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(20, 168, 187, 0.13);
+    border-radius: 50%;
+  }
+
+  .lab-principle__icon svg {
+    position: relative;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .lab-principle h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 1rem;
+    padding: 0;
+    border: 0 !important;
+    color: var(--lab-ink);
+    font-size: 1.35rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .lab-principle p {
+    position: relative;
+    z-index: 2;
+    max-width: 260px;
+    margin: 0 auto;
+    color: var(--lab-muted);
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  /* ======================================================
+     TABLET
+     ====================================================== */
+
+  @media (max-width: 950px) {
+    .lab-values__inner,
+    .lab-expedition {
+      grid-template-columns: 1fr;
+    }
+
+    .lab-purpose-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lab-principles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lab-expedition__visual {
+      min-height: 360px;
+    }
+
+    .lab-hero__pattern {
+      width: 60%;
+    }
+  }
+
+  /* ======================================================
+     MOBILE
+     ====================================================== */
+
+  @media (max-width: 600px) {
+    .lab-container {
+      width: min(100% - 1.25rem, 1180px);
+    }
+
+    .lab-hero__inner {
+      padding: 4.5rem 0;
+    }
+
+    .lab-hero h1 {
+      font-size: clamp(3.1rem, 15vw, 4.6rem);
+      line-height: 1.02;
+    }
+
+    .lab-hero__intro {
+      margin-top: 2.25rem;
+    }
+
+    .lab-actions {
+      flex-direction: column;
+      margin-top: 2.25rem;
+    }
+
+    .lab-button {
+      width: 100%;
+    }
+
+    .lab-mission-card {
+      margin-top: 2rem;
+      padding: 1.75rem;
+    }
+
+    .lab-mission-card__header {
+      align-items: flex-start;
+    }
+
+    .lab-mission-card__icon {
+      width: 52px;
+      height: 52px;
+      flex-basis: 52px;
+    }
+
+    .lab-section {
+      padding: 4.5rem 0;
+    }
+
+    .lab-purpose-card {
+      padding: 1.75rem;
+    }
+
+    .lab-principles {
+      grid-template-columns: 1fr;
+    }
+
+    .lab-values__inner {
+      gap: 2.5rem;
+      padding: 5rem 0;
+    }
+
+    .lab-expedition__visual {
+      min-height: 310px;
+    }
+
+    .lab-hero__pattern {
+      width: 90%;
+      opacity: 0.06;
+    }
+  }
+</style>
+
+```{=html}
+<div class="lab-home">
+
+  <section class="lab-hero">
+
+    <div
+      class="lab-hero__pattern"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="lab-hero__waves"
+      aria-hidden="true"
+    ></div>
+
+    <div class="lab-container lab-hero__inner">
+
+      <div class="lab-hero__copy">
+
+        <p class="lab-kicker">
+          OPEN RESEARCH • DATA STORIES • SOFTWARE • PUBLIC VALUE
+        </p>
+
+        <h1>
+          Build with data.<br>
+          Be a <span>positive force.</span>
+        </h1>
+
+        <p class="lab-hero__intro">
+          Matteo’s Lab is where I use data, research and technology to build
+          tools and stories that help people, communities and businesses
+          understand problems, discover opportunities and make better decisions.
+        </p>
+
+        <div class="lab-actions">
+
+          <a
+            class="lab-button lab-button--primary"
+            href="/projects/pacific-dataviz-2026/"
+          >
+            Explore the Pacific project
+          </a>
+
+          <a
+            class="lab-button lab-button--secondary"
+            href="/about.html"
+          >
+            About the lab
+          </a>
+
+        </div>
+
+      </div>
+
+      <aside class="lab-mission-card">
+
+        <div class="lab-mission-card__content">
+
+          <div class="lab-mission-card__header">
+
+            <div
+              class="lab-mission-card__icon"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 2v3"></path>
+                <path d="M12 19v3"></path>
+                <path d="M2 12h3"></path>
+                <path d="M19 12h3"></path>
+                <path d="m12 7 2 5-2 5-2-5 2-5Z"></path>
+              </svg>
+            </div>
+
+            <div>
+
+              <p class="lab-mission-card__label">
+                THE GUIDING PRINCIPLE
+              </p>
+
+              <h2>
+                Be a Positive Force.
+              </h2>
+
+            </div>
+
+          </div>
+
+          <p class="lab-mission-card__copy">
+            I want the work created here to move beyond the screen: helping
+            people understand something important, improving how a business
+            serves its customers or giving a community a stronger voice.
+          </p>
+
+          <span class="lab-mission-card__source">
+            A principle from my alma mater
+          </span>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+  <section class="lab-section lab-section--white">
+
+    <div
+      class="lab-section-pattern"
+      aria-hidden="true"
+    ></div>
+
+    <div class="lab-container">
+
+      <div class="lab-section__intro">
+
+        <p class="lab-section__eyebrow">
+          WHY THIS LAB EXISTS
+        </p>
+
+        <h2>
+          Technology should make life more understandable and more useful.
+        </h2>
+
+        <p>
+          We have access to more information than ever before. The challenge
+          is turning that information into work that helps someone: a clearer
+          decision, a better service, a useful tool or a story that deserves
+          greater attention.
+        </p>
+
+      </div>
+
+      <div class="lab-purpose-grid">
+
+        <article class="lab-purpose-card">
+
+          <span class="lab-purpose-card__number">
+            01 • UNDERSTAND
+          </span>
+
+          <h3>
+            Research real questions
+          </h3>
+
+          <p>
+            Explore datasets, listen to communities and investigate the
+            underlying causes behind problems rather than jumping directly
+            to a polished answer.
+          </p>
+
+        </article>
+
+        <article class="lab-purpose-card">
+
+          <span class="lab-purpose-card__number">
+            02 • BUILD
+          </span>
+
+          <h3>
+            Create useful tools
+          </h3>
+
+          <p>
+            Develop visualizations, browser extensions, applications and
+            analytical systems that make complex work clearer and easier
+            for people to use.
+          </p>
+
+        </article>
+
+        <article class="lab-purpose-card">
+
+          <span class="lab-purpose-card__number">
+            03 • SHARE
+          </span>
+
+          <h3>
+            Document the journey
+          </h3>
+
+          <p>
+            Publish the questions, code, experiments, mistakes and decisions
+            behind each project so the work can be understood, challenged
+            and improved.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="lab-section lab-section--cream">
+
+    <div class="lab-container">
+
+      <div class="lab-section__intro">
+
+        <p class="lab-section__eyebrow">
+          CURRENT PROJECT
+        </p>
+
+        <h2>
+          Learning from the Pacific through open data.
+        </h2>
+
+        <p>
+          My first data competition is also the first complete expedition
+          documented inside this lab, from understanding the available
+          evidence to building the final visual story.
+        </p>
+
+      </div>
+
+      <article class="lab-expedition">
+
+        <div class="lab-expedition__visual">
+
+          <img
+            src="/images/home/matteo-arellano-navigating.jpeg"
+            alt="Matteo Arellano standing on a boat with mountains and sea in the background"
+            class="lab-expedition__image"
+          />
+
+        </div>
+
+        <div class="lab-expedition__content">
+
+          <p class="lab-expedition__number">
+            PROJECT 001 • JULY 2026
+          </p>
+
+          <h3>
+            Pacific Dataviz Challenge 2026
+          </h3>
+
+          <p>
+            I am exploring how open data can reveal meaningful stories about
+            climate, communities and public policy across the Pacific.
+          </p>
+
+          <p>
+            The complete process will live here: research notes, hypotheses,
+            data cleaning, code, visual experiments, failures, findings and
+            the final submission.
+          </p>
+
+          <a
+            class="lab-expedition__link"
+            href="/projects/pacific-dataviz-2026/"
+          >
+            Enter the project →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="lab-values">
+
+    <div class="lab-container lab-values__inner">
+
+      <div>
+
+        <p class="lab-kicker">
+          THE BIGGER PURPOSE
+        </p>
+
+        <p class="lab-values__quote">
+          More insights.<br>
+          Shared benefits.<br>
+          <span>Better outcomes.</span>
+        </p>
+
+      </div>
+
+      <div class="lab-values__copy">
+
+        <p>
+          I have been fortunate to travel to remote places and meet communities
+          whose lives are closely connected to farming, fishing and natural
+          resources.
+        </p>
+
+        <p>
+          Seeing pollution, waste and extreme temperatures affect these places
+          changed how I think about technology. Data is not only something to
+          analyse. It can help us understand what is changing, make problems
+          visible and support people who already hold deep knowledge of their
+          environment.
+        </p>
+
+        <p>
+          The same principle applies to businesses and digital products.
+          Better measurement and better tools can remove friction, improve
+          services and help organisations treat their customers more fairly.
+        </p>
+
+        <p>
+          This lab is where I connect those worlds: data, technology, business,
+          communities and the responsibility to contribute something useful.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="lab-section lab-section--white">
+
+    <div class="lab-container">
+
+      <div class="lab-section__intro">
+
+        <p class="lab-section__eyebrow">
+          HOW I WANT TO WORK
+        </p>
+
+        <h2>
+          Four principles behind every project.
+        </h2>
+
+      </div>
+
+      <div class="lab-principles">
+
+        <article class="lab-principle">
+
+          <div
+            class="lab-principle__icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8"></circle>
+              <path d="M12 2v3"></path>
+              <path d="M12 19v3"></path>
+              <path d="M2 12h3"></path>
+              <path d="M19 12h3"></path>
+              <path d="m12 7 2 5-2 5-2-5 2-5Z"></path>
+            </svg>
+          </div>
+
+          <h3>
+            Start with curiosity
+          </h3>
+
+          <p>
+            Ask better questions before choosing the technology or the answer.
+          </p>
+
+        </article>
+
+        <article class="lab-principle">
+
+          <div
+            class="lab-principle__icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M4 17c2-3 4-4 8-4s6 1 8 4"></path>
+              <circle cx="12" cy="8" r="3"></circle>
+              <path d="M3 20c3-2 6-3 9-3s6 1 9 3"></path>
+            </svg>
+          </div>
+
+          <h3>
+            Stay close to reality
+          </h3>
+
+          <p>
+            Understand the people, communities and systems represented by the data.
+          </p>
+
+        </article>
+
+        <article class="lab-principle">
+
+          <div
+            class="lab-principle__icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <circle cx="6" cy="12" r="2"></circle>
+              <circle cx="18" cy="6" r="2"></circle>
+              <circle cx="18" cy="18" r="2"></circle>
+              <path d="m8 11 8-4"></path>
+              <path d="m8 13 8 4"></path>
+            </svg>
+          </div>
+
+          <h3>
+            Build transparently
+          </h3>
+
+          <p>
+            Share the process, limitations and reasoning behind the final work.
+          </p>
+
+        </article>
+
+        <article class="lab-principle">
+
+          <div
+            class="lab-principle__icon"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21V10"></path>
+              <path d="M12 14c-4 0-7-2-8-6 4 0 7 2 8 6Z"></path>
+              <path d="M12 11c4 0 7-2 8-6-4 0-7 2-8 6Z"></path>
+              <path d="M7 21h10"></path>
+            </svg>
+          </div>
+
+          <h3>
+            Leave something useful
+          </h3>
+
+          <p>
+            Create work that improves understanding, decisions or everyday life.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+```
